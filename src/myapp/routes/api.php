@@ -20,10 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // List Lot
-Route::get('parking-lot', [ParkController::class, 'parkinLot']);
+Route::get('parking-lot', [ParkController::class, 'parkingLot']);
 
 // Parking
-Route::post('parking-spot/{id}/park', [ParkController::class, 'parkinSpot']);
+Route::post('parking-spot/{id}/park', [ParkController::class, 'parkingSpot']);
 
 // Unparking
-Route::post('parking-spot/{id}/unpark', [ParkController::class, 'unParkinSpot']);
+Route::post('parking-spot/{id}/unpark', [ParkController::class, 'unParkingSpot']);

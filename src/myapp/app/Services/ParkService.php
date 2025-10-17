@@ -9,7 +9,7 @@ use App\Models\Vehicle;
 class ParkService {
 
     // Park a Vehicle
-	public function parkinSpotService(Request $request, $id) {
+	public function parkingSpotService(Request $request, $id) {
         try {
 
             // Verify if vehicle is registered
@@ -92,7 +92,7 @@ class ParkService {
 
 
      // Unpark a Vehicle
-	public function unParkinSpotService(Request $request, $id) {
+	public function unParkingSpotService(Request $request, $id) {
         try {
 
             // Find the Vehicle
@@ -136,7 +136,7 @@ class ParkService {
 
 
     // List all Slots
-    public function parkinLotService(){
+    public function parkingLotService(){
         try {
 
             // List all slots of parking with it last status (free or occupied) and last vehicle parked

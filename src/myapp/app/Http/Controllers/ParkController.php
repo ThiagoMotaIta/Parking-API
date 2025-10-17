@@ -10,18 +10,18 @@ use Illuminate\Http\Request;
 // It is a samples ou Strategy Design Patter usage - Dependency injection
 class ParkController extends Controller
 {
-    public function parkinSpot(ParkService $parkService, Request $request, $id)
+    public function parkingSpot(ParkService $parkService, Request $request, $id)
     {
-        return $parkService->parkinSpotService($request, $id);
+        return $parkService->parkingSpotService($request, $id);
     }
 
-    public function unParkinSpot(ParkService $parkService, Request $request, $id)
+    public function unParkingSpot(ParkService $parkService, Request $request, $id)
     {
-        return $parkService->unParkinSpotService($request, $id);
+        return $parkService->unParkingSpotService($request, $id);
     }
 
-    public function parkinLot(ParkService $parkService, Request $request)
+    public function parkingLot(ParkService $parkService, Request $request)
     {
-        return $parkService->parkinLotService();
+        return $parkService->parkingLotService();
     }
 }
