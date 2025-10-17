@@ -4,7 +4,9 @@ namespace App\Services;
 
 use Illuminate\Http\Request;
 use App\Models\Park;
+use App\Enums\ParkEnum;
 use App\Models\Vehicle;
+use App\Enums\VehicleEnum;
 
 class ParkService {
 
@@ -40,7 +42,7 @@ class ParkService {
             }
 
             // List all free slots for parking
-            $park = Park::where('status', ParkEnum::Free)->get();
+            $park = Park::where('status', 'free')->get();
 
             if ($request->vehicle_type == "motorcycle"){
                 $createPark = new Park;
