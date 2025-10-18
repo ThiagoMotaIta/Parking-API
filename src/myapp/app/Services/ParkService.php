@@ -118,7 +118,7 @@ class ParkService {
         try {
 
             // List all slots of parking with it last status (free or occupied) and last vehicle parked
-            $park = Park::distinct('lot')->get();
+            $park = Park::selectRaw('DISTINCT ON (lot) lot, status')->orderBy('lot')->orderBy('id', 'desc')->get();
 
             return response()->json([
                 "parkingList" => $park
