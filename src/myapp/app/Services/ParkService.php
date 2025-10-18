@@ -101,7 +101,7 @@ class ParkService {
             $unpark = Park::where('vehicle_id', '=', $id)->update(['status' => ParkEnum::Free]);
 
             return response()->json([
-                "message" => "Vehicle Parked!"
+                "message" => "Vehicle Unparked!"
             ], 202);
 
         } catch (Exception $e){
