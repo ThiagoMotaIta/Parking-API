@@ -97,8 +97,8 @@ class ParkService {
 	public function unParkingSpotService(Request $request, $id) {
         try {
 
-            // As the table parks has N registers from N vehicles, system can just set all specific vehicle slots FREE when such vehicle unparks
-            $unpark = Park::where('vehicle_id', '=', $id)->update(['status' => ParkEnum::Free]);
+            // As the table parks has N registers from N vehicles, system can just set all specific vehicle occupied slots FREE when such vehicle unparks
+            $unpark = Park::where('vehicle_id', '=', $id)->where('status', '=', ParkEnum::Occupied)->update(['status' => ParkEnum::Free]);
 
             return response()->json([
                 "message" => "Vehicle Unparked!"
