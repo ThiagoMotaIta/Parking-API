@@ -97,37 +97,13 @@ class ParkService {
 	public function unParkingSpotService(Request $request, $id) {
         try {
 
-            // Find the Vehicle
-            $vehicle = Vehicle::find($id);
-
-            // Find vehicle parking slot
-            $park = Park::where('vehicle_id', $id)->get();
-
-            if ($vehicle->vehicle_type == "motorcycle" || $request->vehicle_type == "car"){
-                $park = $park[0];
-                $park->status = ParkEnum::Free;
-                $park->save();
-            }
-
-            if ($request->vehicle_type == "van"){
-                // For vans, system needs to set FREE 3 slots
-                // No loop now due to the assessment, we got only 3 slots for vans (C3, C4 and C5)
-                $park = $park[0];
-                $park->status = ParkEnum::Free;
-                $park->save();
-
-                $park = $park[1];
-                $park->status = ParkEnum::Free;
-                $park->save();
-
-                $park = $park[2];
-                $park->status = ParkEnum::Free;
-                $park->save();
-            }
+            // As the table parks has N registers from N vehicles, system can just set all specific vehicle slots FREE when such vehicle unparks
+            $unpark = Park::where('vehicle_id', '=', $id)->update(['status' => ParkEnum::Free]);
 
             return response()->json([
-                "message" => "Vehicle Unparked!"
+                "message" => "Vehicle Parked!"
             ], 202);
+
         } catch (Exception $e){
             return response()->json([
               'error' => $e->getMessage()
@@ -142,7 +118,7 @@ class ParkService {
         try {
 
             // List all slots of parking with it last status (free or occupied) and last vehicle parked
-            $park = Park::distinct(['lot'])->get();
+            $park = Park::distinct('lot')->get();
 
             return response()->json([
                 "parkingList" => $park
