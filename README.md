@@ -1,6 +1,3 @@
-# roofr-assessment-thiago-mota
-Roofr Backend Developer Assessment - PHP/Laravel
-
 # Parking system
 
 # What i've done in 60 minutes challenge:
