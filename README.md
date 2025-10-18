@@ -25,4 +25,4 @@
 <img src="https://thiagomota.work/prints/Captura%20de%20tela%202025-10-17%20192224.png" width="100%" />
 
 - List all Slots
-<img src="https://thiagomota.work/prints/Captura%20de%20tela%202025-10-17%20192026.png" width="100%" />
+<img src="https://thiagomota.work/prints/image.png" width="100%" />
