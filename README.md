@@ -20,5 +20,11 @@
 - List all Slots
 <img src="https://thiagomota.work/prints/image.png" width="100%" />
 
+
+# Some links
+
 - Link to C4 Architectural model
 https://miro.com/app/board/uXjVJ3A0jV4=/
+
+- Link to LIVE DEMO video
+https://youtu.be/fRNvBUpMI9Y
