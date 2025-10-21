@@ -5,9 +5,9 @@
 - Create routes for API methods (GET: /parking-lot, POST: /parking-spot/{id}/park and POST: /parking-spot/{id}/unpark);
 - Create Seeder to populete PARK entity;
 - Create ENUM data structure (typed data flow for SLOT STATUS and VEHICLE TYPE);
-- Usege of Strategy Design Patters (by creating Service Classes to provide dependency injection, avoiding buseness rules inside the Controllers)
-- Tried to follow as must business rules as i could;
-- Unit Tests with PHPUnit
+- Usege of Strategy Design Patters (by creating Service Classes to provide dependency injection, avoiding buseness rules inside the Controllers);
+- Unit Tests with PHPUnit;
+- Containers (3 docker images: Laravel, Postgres and Cache);
 
 # Some prints of API endpoints
 
